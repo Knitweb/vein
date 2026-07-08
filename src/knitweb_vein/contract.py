@@ -75,7 +75,7 @@ def execute(job: SmartContractProcedureJob, originator_priv: str) -> ContractPro
       3. Result is canonical (str/int/list/bool only → identical bytes)
     """
     # Import here to avoid circular dependency
-    from .contract_executor import execute_procedure, resolve_contract
+    from .executor import execute_procedure, resolve_contract
 
     # Resolve the contract from Fabric/OriginTrail
     contract = resolve_contract(job.contract_asset)
@@ -113,7 +113,7 @@ def verify(job: SmartContractProcedureJob, proof: ContractProof) -> bool:
       3. Originator signature is valid over the result
     """
     # Import here to avoid circular dependency
-    from .contract_executor import execute_procedure, resolve_contract
+    from .executor import execute_procedure, resolve_contract
 
     # Check 1: digest matches result
     result_bytes = canonical.encode(proof.result)
