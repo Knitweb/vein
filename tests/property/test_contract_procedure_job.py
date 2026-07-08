@@ -7,9 +7,9 @@ from __future__ import annotations
 
 import unittest
 
-from knitweb.core import canonical, crypto
-from knitweb.pouw.contract import ContractProof, SmartContractProcedureJob, verify
-from knitweb.fabric.contract_item import ProcedureSpec, SmartContractRecord
+from knitweb_vein import canonical, crypto
+from knitweb_vein import ContractProof, SmartContractProcedureJob, verify
+from knitweb_vein.items import ProcedureSpec, SmartContractRecord
 
 
 class TestSmartContractProcedureJob(unittest.TestCase):

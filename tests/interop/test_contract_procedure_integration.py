@@ -7,8 +7,8 @@ from __future__ import annotations
 
 import unittest
 
-from knitweb.core import canonical, crypto
-from knitweb.pouw.contract import (
+from knitweb_vein import canonical, crypto
+from knitweb_vein import (
     ContractProof,
     SmartContractProcedureJob,
     execute,
