@@ -15,7 +15,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-from ..core import canonical
+from . import canonical
 
 __all__ = ["SmartContractRecord", "ProcedureSpec"]
 
