@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "knitweb-vein"
+version = "0.1.0"
+description = "Smart contract procedure engine: the vein through which Pulse flows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Edwin Hauwert", email = "develuse@gmail.com"},
+]
+keywords = ["knitweb", "pulse", "smart-contracts", "stored-procedures", "pouw"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+    "knitweb-knitfield>=0.1.0",
+    "ecdsa>=0.18",
+    "cbor2>=5.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-cov>=4",
+    "ruff>=0.1",
+]
+
+[project.urls]
+Repository = "https://github.com/Knitweb/vein"
+Issues = "https://github.com/Knitweb/vein/issues"
+
+[tool.setuptools]
+packages = ["knitweb_vein"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "C4", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
